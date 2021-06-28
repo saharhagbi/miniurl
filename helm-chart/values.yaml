@@ -27,3 +27,4 @@ auth:
   bearerTokenConfig:
     # A random token will be generated if this stays empty
     token:
+# test deployment
