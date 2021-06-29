@@ -11,18 +11,6 @@ pipeline {
    }
 
    stages {
-      stage('Preparation') {
-         steps {
-            cleanWs()
-            git credentialsId: 'GitHub2', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
-         }
-      }
-      stage('Build') {
-         steps {
-            sh '''mvn clean package'''
-         }
-      }
-
       stage('Build and Push Image') {
          steps {
            sh 'docker image build -t ${REPOSITORY_TAG} .'
